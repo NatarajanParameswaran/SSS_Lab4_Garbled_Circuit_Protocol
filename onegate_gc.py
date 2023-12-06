@@ -90,17 +90,17 @@ def main(argv):
     # Generate Input labels and Garbled table
     A_labels, B_labels = generate_labels(), generate_labels()
     O_labels, Garbled_table = garble_gate(gates[argv[0]], A_labels, B_labels)
-    # print(f'Output Labels: {O_labels}')
-    # print(f'Garbled Table:')
-    # for entry in Garbled_table:
-    #     print(f'\t\t{len(entry)}bytes - {entry}')
+     print(f'Output Labels: {O_labels}')
+     print(f'Garbled Table:')
+     for entry in Garbled_table:
+         print(f'\t\t{len(entry)}bytes - {entry}')
 
     # Evaluation starts here
     A, B = int(argv[1]), int(argv[2])
     encoded_A = A_labels[A]
     encoded_B = B_labels[B]
-    # print(f'Encoded A ({len(encoded_A)}bytes): {encoded_A}')
-    # print(f'Encoded B ({len(encoded_B)}bytes): {encoded_B}')
+     print(f'Encoded A ({len(encoded_A)}bytes): {encoded_A}')
+     print(f'Encoded B ({len(encoded_B)}bytes): {encoded_B}')
 
     # Call the Evaluator
     encoded_O = evaluate_garbled_gate(Garbled_table, encoded_A,
